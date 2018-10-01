@@ -9,7 +9,7 @@ import hotel.utils.IOUtils;
 
 public class Room {
 	
-	private enum State {READY, OCCUPIED}
+	public enum State {READY, OCCUPIED}
 	
 	int id;
 	RoomType roomType;
@@ -93,6 +93,5 @@ public class Room {
 		bookings.remove(booking);
 		state = State.READY;
 	}
-
 
 }
