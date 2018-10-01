@@ -90,5 +90,20 @@ public class TestRoom {
     @Test
     public void testCheckinWhenNotOccupied() {
  
+    }
+    
+    @Test
+    public void testCheckoutWhenOccupied() {
+        long confirmationNumber = booking.getConfirmationNumber();
+        bookings.add(booking);
+        room.checkin();
+        assertEquals(1, bookings.size());
+        assertTrue(room.isOccupied());
+        
+        room.checkout(booking);
+        
+        bookings.remove(booking);
+        assertTrue(room.isReady());
+        assertEquals(0, bookings.size());
     }    
 }
