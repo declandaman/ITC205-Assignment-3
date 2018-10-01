@@ -85,5 +85,10 @@ public class TestRoom {
     @Test
     public void testCheckoutWhenNotOccupied() {
  
+    }
+
+    @Test
+    public void testCheckinWhenNotOccupied() {
+ 
     }    
 }
