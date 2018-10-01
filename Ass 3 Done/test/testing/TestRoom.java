@@ -81,4 +81,9 @@ public class TestRoom {
                 
         assertEquals("Cannot check into occupied room", t.getMessage());
     }
+    
+    @Test
+    public void testCheckoutWhenNotOccupied() {
+ 
+    }    
 }
