@@ -70,4 +70,15 @@ public class TestRoom {
         Booking actual = room.book(mockGuest, bookedArrival, stayLength, numberOfOccupants, creditCard);
         assertNotNull(actual);
     }
+    
+    @Test
+    public void testCheckinWhenOccupied() {
+        room.checkin();
+        assertTrue(room.isOccupied());
+        
+        Executable e = () -> room.checkin();
+        Throwable t = assertThrows(RuntimeException.class, e)
+                
+        assertEquals("Cannot check into occupied room", t.getMessage());
+    }
 }
