@@ -64,44 +64,6 @@ public class TestRoom {
     public void tearDown() throws Exception {
     }
     
-    @Test
-    public void testCheckinWhenOccupied() {
-        room.checkin();
-        assertTrue(room.isOccupied());
-        
-        //Executable e = () -> room.checkin();
-        //Throwable t = assertThrows(RuntimeException.class, e)
-                
-        //assertEquals("Cannot check into occupied room", t.getMessage());
-    }
-    
-    @Test
-    public void testCheckoutWhenOccupied() {
-        long confirmationNumber = booking.getConfirmationNumber();
-        bookings.add(booking);
-        room.checkin();
-        assertEquals(1, bookings.size());
-        assertTrue(room.isOccupied());
-        
-        room.checkout(booking);
-        
-        bookings.remove(booking);
-        assertTrue(room.isReady());
-        assertEquals(0, bookings.size());
-    }
-    
-    
-    @Test
-    public void testCheckoutWhenNotOccupied() {
- 
-    }
-    
-    
-    @Test
-    public void testCheckinWhenNotOccupied() {
- 
-    }    
-    
     
     @Test
     public void testBooking() {
